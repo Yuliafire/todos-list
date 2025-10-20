@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface TaskItemProps {
   id: string;
@@ -9,16 +9,23 @@ interface TaskItemProps {
   onEdit: (id: string, value: string) => void;
 }
 
-export const TaskItem: React.FC<TaskItemProps> = ({
+export const TaskItem = ({
   id,
   title,
   onCompleted,
   onDeleted,
   onEdit,
-}) => {
+}: TaskItemProps) => {
   const [checked, setChecked] = useState(false);
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(title);
+  const editTitleInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (edit) {
+      editTitleInputRef?.current?.focus();
+    }
+  }, [edit]);
 
   return (
     <div className={styles.inputTaskItem}>

@@ -15,7 +15,6 @@ export const App = () => {
   }, [createTask]);
 
 
-
   return (
     <div className={styles.app}>
       <h1 className={styles.appTitle}>TO DO OR NOT TO DO APP</h1>
