@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 interface TaskItemProps {
   id: string;
   title: string;
+  completed: boolean;
   onCompleted: (id: string) => void;
   onDeleted: (id: string) => void;
   onEdit: (id: string, value: string) => void;
@@ -12,11 +13,12 @@ interface TaskItemProps {
 export const TaskItem = ({
   id,
   title,
+  completed, // Add this
   onCompleted,
   onDeleted,
   onEdit,
 }: TaskItemProps) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(completed); // Initialize with completed prop
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(title);
   const editTitleInputRef = useRef<HTMLInputElement>(null);
@@ -27,8 +29,15 @@ export const TaskItem = ({
     }
   }, [edit]);
 
+  // Sync local checked state with prop changes
+  useEffect(() => {
+    setChecked(completed);
+  }, [completed]);
+
   return (
-    <div className={styles.inputTaskItem}>
+    <div
+      className={`${styles.inputTaskItem} ${checked ? styles.completed : ''}`}
+    >
       <label className={styles.inputTaskItemLabel}>
         <input
           type="checkbox"
@@ -37,13 +46,12 @@ export const TaskItem = ({
           className={styles.inputTaskItemCheckBox}
           onChange={(e) => {
             setChecked(e.target.checked);
-            if (e.target.checked) {
-              onCompleted(id);
-            }
+            onCompleted(id); // This will toggle the completed status
           }}
         />
         {edit ? (
           <input
+            ref={editTitleInputRef}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={(e) => {
@@ -51,13 +59,12 @@ export const TaskItem = ({
                 onEdit(id, value);
                 setEdit(false);
               }
-              if (e.key === ' Escape') {
+              if (e.key === 'Escape') {
                 setValue(title);
                 setEdit(false);
               }
             }}
             className={styles.inputTaskItemTitleEdit}
-            autoFocus
           />
         ) : (
           <h3 className={styles.inputTaskItemTitle}>{title}</h3>
@@ -78,6 +85,7 @@ export const TaskItem = ({
           aria-label="edit"
           onClick={() => setEdit(true)}
           className={styles.editButton}
+          disabled={checked}
         />
       )}
 

@@ -7,6 +7,17 @@
     border-radius: 5px;
     gap: 10px;
     color: black;
+
+    // Completed task styling
+    &.completed {
+      background: #f8f9fa;
+      
+      .inputTaskItemTitle {
+        text-decoration: line-through;
+        color: #6c757d;
+        opacity: 0.7;
+      }
+    }
   
     &Label {
       display: grid;

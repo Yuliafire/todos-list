@@ -9,6 +9,7 @@ export const App = () => {
   const createTask = useToDoStore((state) => state.createTask);
   const updateTask = useToDoStore((state) => state.updateTask);
   const removeTask = useToDoStore((state) => state.removeTask);
+  const toggleTask = useToDoStore((state) => state.toggleTask);
 
   useEffect(() => {
     createTask('');
@@ -38,7 +39,9 @@ export const App = () => {
             id={task.id}
             title={task.title}
             onDeleted={removeTask}
-            onCompleted={removeTask}
+            completed={task.completed}
+            // onCompleted={removeTask}
+            onCompleted={toggleTask}
             onEdit={updateTask}
           />
         ))}
