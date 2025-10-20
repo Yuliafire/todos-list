@@ -39,7 +39,18 @@ export const TaskItem: React.FC<TaskItemProps> = ({
           <input
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                onEdit(id, value);
+                setEdit(false);
+              }
+              if (e.key === ' Escape') {
+                setValue(title);
+                setEdit(false);
+              }
+            }}
             className={styles.inputTaskItemTitleEdit}
+            autoFocus
           />
         ) : (
           <h3 className={styles.inputTaskItemTitle}>{title}</h3>
