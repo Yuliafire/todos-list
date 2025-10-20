@@ -1,5 +1,4 @@
 import styles from './index.module.scss';
-import { useEffect } from 'react';
 import { AddTask } from '../components/AddTask';
 import { useToDoStore } from '../../data/store/useToDoStore';
 import { TaskItem } from '../components/TaskItem';
@@ -10,11 +9,6 @@ export const App = () => {
   const updateTask = useToDoStore((state) => state.updateTask);
   const removeTask = useToDoStore((state) => state.removeTask);
   const toggleTask = useToDoStore((state) => state.toggleTask);
-
-  useEffect(() => {
-    createTask('');
-  }, [createTask]);
-
 
   return (
     <div className={styles.app}>
