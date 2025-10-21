@@ -3,7 +3,6 @@ import { AddTask } from '../components/AddTask';
 import { useToDoStore } from '../../data/store/useToDoStore';
 import { TaskItem } from '../components/TaskItem';
 
-
 export const App = () => {
   const tasks = useToDoStore((state) => state.tasks);
   const createTask = useToDoStore((state) => state.createTask);

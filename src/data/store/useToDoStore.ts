@@ -70,6 +70,7 @@ export const useToDoStore = create<ToDoStore>(
         const newTask = {
           id: generateId(),
           title,
+          completed: false,
         };
         set({
           tasks: [newTask].concat(tasks),
