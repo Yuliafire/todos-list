@@ -29,7 +29,6 @@ export const TaskItem = ({
     }
   }, [edit]);
 
-
   useEffect(() => {
     setChecked(completed);
   }, [completed]);
@@ -46,7 +45,7 @@ export const TaskItem = ({
           className={styles.inputTaskItemCheckBox}
           onChange={(e) => {
             setChecked(e.target.checked);
-            onCompleted(id); 
+            onCompleted(id);
           }}
         />
         {edit ? (

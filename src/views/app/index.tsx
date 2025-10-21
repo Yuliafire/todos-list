@@ -80,9 +80,9 @@ export const App = () => {
       <section className={styles.appSection}>
         {!filteredTasks.length && (
           <p className={styles.appSectionText}>
-            {filter === 'all' && 'Нет задач'}
-            {filter === 'active' && 'Нет активных задач'}
-            {filter === 'completed' && 'Нет выполненных задач'}
+            {filter === 'all' && 'No tasks'}
+            {filter === 'active' && 'No active tasks'}
+            {filter === 'completed' && 'No completed tasks'}
           </p>
         )}
         {filteredTasks.map((task) => (

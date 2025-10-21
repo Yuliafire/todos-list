@@ -17,10 +17,41 @@
   }
 }
 
+// .filters {
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  // display: flex;
+  // justify-content: center;
+  // gap: 10px;
+// }
+// 
 
+
+// В App.module.scss
 .filters {
-  margin-top: 10px;
   display: flex;
-  justify-content: flex-start;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  
+  button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: grey;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    
+    &:hover {
+     scale: 1.1;
+    }
+    
+    &.active {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+  }
 }
