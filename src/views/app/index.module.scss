@@ -14,27 +14,17 @@
 
   &Text {
     text-align: center;
+    font-size: 1rem;
   }
 }
 
-// .filters {
-  // margin-top: 20px;
-  // margin-bottom: 20px;
-  // display: flex;
-  // justify-content: center;
-  // gap: 10px;
-// }
-// 
-
-
-// В App.module.scss
 .filters {
   display: flex;
   gap: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
-  
+
   button {
     padding: 8px 16px;
     border: 1px solid #ddd;
@@ -43,15 +33,26 @@
     cursor: pointer;
     transition: all 0.2s ease;
     color: white;
-    
+
     &:hover {
-     scale: 1.1;
+      scale: 1.1;
     }
-    
+
     &.active {
       background: #007bff;
       color: white;
       border-color: #007bff;
     }
   }
+}
+
+.activeTasksCount {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 10px;
+
 }
