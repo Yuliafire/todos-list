@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@400;500&display=swap');
+
+$typography-header: 48px;
+$typography-text: 16px;
+$base-weight: 500;
+$primary-white: #ffffff;
+$button-background: rgba(206, 211, 220, 0.2);
+$primary-black: rgba(0, 0, 0, 0.8);
+$button-dark: #192a51;
+$btn-border:  1px solid #8c8a8aff;
+$label-border: 1px solid #ccc;
+$border-radius: 5px;
+$box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+$btn-box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+$disabled-button: rgba(89, 80, 121, 0.5);
+$transition: all 0.2s ease;
+$whitesmoke: whitesmoke;
+$font-family: 'Roboto', sans-serif;
+$opacity: 0.8;
+
+:root {
+    padding: 0;
+    font-family: $font-family;
+    font-weight: $base-weight;
+  }

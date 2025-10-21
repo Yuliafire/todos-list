@@ -1,21 +1,23 @@
+@use '../../../styles/variables' as *;
+
 .inputTaskItem {
   display: grid;
   grid-template-columns: 1fr 50px 50px;
   margin-bottom: 15px;
-  background: whitesmoke;
-  border: grey 1px solid;
-  border-radius: 5px;
+  background: $whitesmoke;
+  border: $btn-border;
+  border-radius: $border-radius;
   gap: 10px;
-  color: black;
-  font-family: 'Roboto', sans-serif;
+  color: $primary-black;
+  font-family: $font-family;
 
   &.completed {
-    background: #f8f9fa;
+    background: $whitesmoke;
 
     .inputTaskItemTitle {
       text-decoration: line-through;
-      color: #032a4dff;
-      opacity: 0.7;
+      color: $primary-black;
+      opacity: $opacity;
     }
   }
 
@@ -51,32 +53,32 @@
 .editButton {
   background-image: url('../../../assets/edit.svg');
   &:hover {
-    opacity: 0.8;
+    opacity: $opacity;
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+    box-shadow: $btn-box-shadow;
   }
 }
 
 .saveButton {
   background-image: url('../../../assets/check.svg');
   &:hover {
-    opacity: 0.8;
+    opacity: $opacity;
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+    box-shadow: $btn-box-shadow;
   }
 }
 
 .deleteButton {
   background-image: url('../../../assets/trash.svg');
   &:hover {
-    opacity: 0.8;
+    opacity: $opacity;
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+    box-shadow: $btn-box-shadow;
   }
 }

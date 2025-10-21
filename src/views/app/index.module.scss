@@ -1,13 +1,15 @@
+@use '../../styles/variables' as *;
+
 .app {
   min-width: 600px;
-  background: #fff;
+  background: $primary-white;
   border-radius: 20px;
   padding: 20px 55px;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family;
 
   &Title {
-    font-size: 40px;
+    font-size: $typography-header;
     margin-bottom: 0.3em;
     text-align: center;
   }
@@ -20,39 +22,40 @@
 
 .filters {
   display: flex;
+  justify-content: center;
   gap: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
-  justify-content: center;
-
+ 
   button {
     padding: 8px 16px;
-    border: 1px solid #ddd;
-    background: grey;
-    border-radius: 4px;
+    border: $btn-border;
+    background: $button-background;
+    border-radius: $border-radius;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: white;
+    transition: $transition;
+    color: $primary-black;
 
     &:hover {
       scale: 1.1;
+      color: $primary-black;
     }
 
     &.active {
-      background: #007bff;
-      color: white;
-      border-color: #007bff;
+      background: $button-dark;
+      color: $primary-white;
+      border-color: $button-dark;
     }
   }
 }
+
 
 .activeTasksCount {
   display: block;
   text-align: center;
   font-size: 1rem;
-  background: black;
-  color: white;
+  background: $primary-black;
+  color: $primary-white;
   padding: 12px 10px;
   border-radius: 10px;
-
 }
