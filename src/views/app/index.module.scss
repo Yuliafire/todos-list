@@ -41,7 +41,7 @@
 .filters {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -55,9 +55,9 @@
     color: $primary-black;
     max-width: 200px;
     width: 100%;
-    
+
     &:hover {
-      scale: 1.1;
+      scale: 1.05;
       color: $primary-black;
     }
 
