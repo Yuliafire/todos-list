@@ -9,7 +9,6 @@ export const App = () => {
   const updateTask = useToDoStore((state) => state.updateTask);
   const removeTask = useToDoStore((state) => state.removeTask);
   const toggleTask = useToDoStore((state) => state.toggleTask);
-  // const activeTasksCount = tasks.filter((task) => !task.completed).length;
 
   const activeTasksCount = useToDoStore(
     (state) => state.tasks.filter((task) => !task.completed).length
@@ -17,12 +16,12 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      <h1 className={styles.appTitle}>TO DO OR NOT TO DO APP</h1>
+      <h1 className={styles.appTitle}>TO DO REACT APP</h1>
 
       {tasks.length > 0 && (
         <div className={styles.tasksInfo}>
           <p className={styles.activeTasksCount}>
-            Осталось задач: {activeTasksCount}
+            Active tasks: {activeTasksCount}
           </p>
         </div>
       )}
@@ -47,7 +46,6 @@ export const App = () => {
             title={task.title}
             onDeleted={removeTask}
             completed={task.completed}
-            // onCompleted={removeTask}
             onCompleted={toggleTask}
             onEdit={updateTask}
           />
