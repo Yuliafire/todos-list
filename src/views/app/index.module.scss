@@ -4,7 +4,7 @@
   border-radius: 20px;
   padding: 20px 55px;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
 
   &Title {
     font-size: 40px;
@@ -15,4 +15,12 @@
   &Text {
     text-align: center;
   }
+}
+
+
+.filters {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }

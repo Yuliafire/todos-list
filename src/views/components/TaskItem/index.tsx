@@ -13,12 +13,12 @@ interface TaskItemProps {
 export const TaskItem = ({
   id,
   title,
-  completed, // Add this
+  completed,
   onCompleted,
   onDeleted,
   onEdit,
 }: TaskItemProps) => {
-  const [checked, setChecked] = useState(completed); // Initialize with completed prop
+  const [checked, setChecked] = useState(completed);
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(title);
   const editTitleInputRef = useRef<HTMLInputElement>(null);
@@ -29,7 +29,7 @@ export const TaskItem = ({
     }
   }, [edit]);
 
-  // Sync local checked state with prop changes
+
   useEffect(() => {
     setChecked(completed);
   }, [completed]);
@@ -46,7 +46,7 @@ export const TaskItem = ({
           className={styles.inputTaskItemCheckBox}
           onChange={(e) => {
             setChecked(e.target.checked);
-            onCompleted(id); // This will toggle the completed status
+            onCompleted(id); 
           }}
         />
         {edit ? (
