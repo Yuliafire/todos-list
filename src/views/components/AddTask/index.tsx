@@ -37,7 +37,11 @@ export const AddTask = ({ onAdd }: AddTaskProps) => {
         placeholder="Add a task"
         aria-label="Add a task"
       />
-      <button className={styles.addTaskButton} onClick={handleAddTask} type="submit">
+      <button
+        className={styles.addTaskButton}
+        onClick={handleAddTask}
+        type="submit"
+      >
         Add
       </button>
     </div>

@@ -1,17 +1,35 @@
 @use '../../styles/variables' as *;
 
 .app {
-  min-width: 600px;
+  min-width: 1000px;
+  width: 100%;
   background: $primary-white;
   border-radius: 20px;
   padding: 20px 55px;
   box-sizing: border-box;
   font-family: $font-family;
+  margin: auto;
+
+  @media (max-width: 1000px) {
+    min-width: 600px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  @media (max-width: 600px) {
+    min-width: 300px;
+    width: 100%;
+    padding: 10px;
+  }
 
   &Title {
     font-size: $typography-header;
     margin-bottom: 0.3em;
     text-align: center;
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
 
   &Text {
@@ -26,7 +44,7 @@
   gap: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
- 
+
   button {
     padding: 8px 16px;
     border: $btn-border;
@@ -35,7 +53,9 @@
     cursor: pointer;
     transition: $transition;
     color: $primary-black;
-
+    max-width: 200px;
+    width: 100%;
+    
     &:hover {
       scale: 1.1;
       color: $primary-black;
@@ -48,7 +68,6 @@
     }
   }
 }
-
 
 .activeTasksCount {
   display: block;
