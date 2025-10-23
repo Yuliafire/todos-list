@@ -33,9 +33,9 @@ Ensure you have the following installed:
 ### Setup and Running
 
 1. Clone the repository:
-   `$ git clone https://github.com/Yuliafire/test-todo`.
+   `$ git clone https://github.com/Yuliafire/todos-list`.
 2. Navigate to the project directory:
-   `$ cd test-todo`
+   `$ cd todos-list`
 3. Install dependencies:
    `$ npm install`
 4. Start the development server:
@@ -54,9 +54,9 @@ Ensure you have the following installed:
 ### Contributing
 
 1.  Clone the repository:
-    `$ git clone https://github.com/Yuliafire/test-todo`
+    `$ git clone https://github.com/Yuliafire/todos-list`
 2.  Navigate to the project directory:
-    `$ cd test-todo`
+    `$ cd todos-list`
 3.  Install dependencies:
     `$ npm install`
 4.  Start the development server:
