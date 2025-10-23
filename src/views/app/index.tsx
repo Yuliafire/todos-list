@@ -4,13 +4,11 @@ import { useToDoStore } from '../../data/store/useToDoStore';
 import { TaskItem } from '../components/TaskItem';
 import { useState } from 'react';
 import type { FilterType } from '../../types/types';
+import { useTaskActions } from '../../hooks/useTaskActions';
 
 export const App = () => {
   const tasks = useToDoStore((state) => state.tasks);
-  const createTask = useToDoStore((state) => state.createTask);
-  const updateTask = useToDoStore((state) => state.updateTask);
-  const removeTask = useToDoStore((state) => state.removeTask);
-  const toggleTask = useToDoStore((state) => state.toggleTask);
+  const { createTask, updateTask, removeTask, toggleTask } = useTaskActions();
 
   const activeTasksCount = useToDoStore(
     (state) => state.tasks.filter((task) => !task.completed).length
