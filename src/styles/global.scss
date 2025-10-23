@@ -1,0 +1,12 @@
+@use '../styles/variables' as *;
+
+body {
+  font: $font-family;
+  background: $button-dark;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,84 @@
+@use '../../../styles/variables' as *;
+
+.inputTaskItem {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+  margin-bottom: 15px;
+  background: $whitesmoke;
+  border: $btn-border;
+  border-radius: $border-radius;
+  gap: 10px;
+  color: $primary-black;
+  font-family: $font-family;
+
+  &.completed {
+    background: $whitesmoke;
+
+    .inputTaskItemTitle {
+      text-decoration: line-through;
+      color: $primary-black;
+      opacity: $opacity;
+    }
+  }
+
+  &Label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+  }
+
+  &CheckBox {
+    width: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+}
+
+.editButton,
+.deleteButton,
+.saveButton {
+  display: block;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.editButton {
+  background-image: url('../../../assets/edit.svg');
+  &:hover {
+    opacity: $opacity;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: $btn-box-shadow;
+  }
+}
+
+.saveButton {
+  background-image: url('../../../assets/check.svg');
+  &:hover {
+    opacity: $opacity;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: $btn-box-shadow;
+  }
+}
+
+.deleteButton {
+  background-image: url('../../../assets/trash.svg');
+  &:hover {
+    opacity: $opacity;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: $btn-box-shadow;
+  }
+}
