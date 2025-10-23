@@ -3,8 +3,7 @@ import { AddTask } from '../components/AddTask';
 import { useToDoStore } from '../../data/store/useToDoStore';
 import { TaskItem } from '../components/TaskItem';
 import { useState } from 'react';
-
-type FilterType = 'all' | 'active' | 'completed';
+import type { FilterType } from '../../types/types';
 
 export const App = () => {
   const tasks = useToDoStore((state) => state.tasks);

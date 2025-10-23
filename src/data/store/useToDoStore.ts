@@ -1,12 +1,7 @@
 import create, { type StateCreator, type State } from 'zustand';
 import { generateId } from '../helper';
 import { devtools } from 'zustand/middleware';
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-}
+import type { Task } from '../../types/types';
 
 interface ToDoStore {
   tasks: Task[];
